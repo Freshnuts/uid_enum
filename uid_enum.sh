@@ -57,8 +57,8 @@ function rmv_usr() {
     fi
 }
 
-# Function that calls all functions in order
-function exe_f {
+# Main function
+function main {
     usage $1 $2 $3
     cUID $1 $2 $3
     dircheck $1 $2 $3
@@ -66,4 +66,4 @@ function exe_f {
     rmv_usr $1 $2 $3
 }
 
-exe_f $1 $2 $3
+main $1 $2 $3
