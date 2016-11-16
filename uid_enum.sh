@@ -1,4 +1,5 @@
 #!/bin/bash
+# Created by Freshnuts
 
 echo "#################################################################"
 echo -e "\n$(tput setaf 6)# uid_enum.sh script matches the target UID #\n\
